@@ -18,9 +18,10 @@ $(document).ready(function(){
     var request = $.ajax({
       url: url,
       method: method,
+      dataType: 'json'
     });
     request.done(function(response){
-      $("#getResponse").html(response);
+      $("#getResponse").html(response["message"]);
     })
   });
 
@@ -48,10 +49,11 @@ $(document).ready(function(){
     var request = $.ajax({
       url: url,
       method: method,
-      data: data
+      data: data,
+      dataType: 'json'
     });
     request.done(function(response){
-      $("#postResponse").html(response);
+      $("#postResponse").html(response["message"]);
     })
   });
 
