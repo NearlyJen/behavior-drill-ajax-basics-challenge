@@ -32,10 +32,12 @@ get '/release_2' do
 end
 
 get '/using_json' do
+  content_type :json
   {message: "I'm the body of the response from a GET request using json."}.to_json
 end
 
 post '/using_json' do
+  content_type :json
   {message: "I'm the body of the response from a POST request using json. #{params[:name]} is #{params[:age]} years old and #{params[:description]}."}.to_json
 end
 

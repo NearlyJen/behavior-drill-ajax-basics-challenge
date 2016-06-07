@@ -18,9 +18,10 @@ $(document).ready(function(){
     var request = $.ajax({
       url: url,
       method: method,
+      contentType: 'application/json'
     });
     request.done(function(response){
-      $("#getResponse").html(response);
+      $("#getResponse").html(response["message"]);
     })
   });
 
@@ -51,7 +52,7 @@ $(document).ready(function(){
       data: data
     });
     request.done(function(response){
-      $("#postResponse").html(response);
+      $("#postResponse").html(response["message"]);
     })
   });
 
