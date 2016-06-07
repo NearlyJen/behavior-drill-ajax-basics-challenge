@@ -1,0 +1,5 @@
+<h3>Edit Muppet</h3>
+<form action="/muppets/<%= @muppet.id %>" method="POST" id="updateMuppet">
+  <input type="hidden" name="_method" value="PUT" />
+  <%= erb :"muppets/_form", locals: { muppet: @muppet } %>
+</form>

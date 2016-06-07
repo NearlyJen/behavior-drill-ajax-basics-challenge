@@ -1,0 +1,22 @@
+<h3>Muppets</h3>
+<table>
+  <tr>
+    <td>Name</td>
+    <td>Description</td>
+    <td colspan="3">Crud Actions</td>
+  </tr>
+  <% @muppets.each do |muppet| %>
+  <tr>
+  <td><%= muppet.name %></td>
+  <td><%= muppet.description %></td>
+  <td><a href="/muppets/<%= muppet.id %>" class="showMuppet button-link">View</a></td>
+  <td><a href="/muppets/<%= muppet.id %>/edit" class="editMuppet button-link">Edit</a></td>
+  <td>
+    <form class="deleteMuppet" method="POST" action="/muppets/<%= muppet.id %>">
+      <input type="hidden" name="_method" value="DELETE" />
+      <input type="submit" value="Delete" />
+    </form>
+  </td>
+  </tr>
+  <% end %>
+</table>
